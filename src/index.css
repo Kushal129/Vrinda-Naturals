@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #FF4790;
+  --dark-100: #000000;
+  --dark-200: #111111;
+  --dark-300: #222222;
+}
+
+@layer base {
+  body {
+    @apply bg-dark-100 text-white;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-title {
+    @apply text-4xl font-bold mb-6 text-white;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary/90 transition-colors duration-300;
+  }
+
+  .btn-secondary {
+    @apply bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 transition-colors duration-300;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-pink-400;
+  }
+
+  .nav-link {
+    @apply hover:text-primary transition-colors duration-300;
+  }
+}
