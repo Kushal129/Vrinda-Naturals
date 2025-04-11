@@ -1,6 +1,6 @@
 # Vrinda Naturals Website
 
-![Vrinda Naturals](https://vrindanaturals.netlify.app/og-image.jpg)
+![Vrinda Naturals](https://res.cloudinary.com/day0qlfda/image/upload/v1744367588/lvoow3j5pzbieo77zqbt.png)
 
 A modern, responsive website for Vrinda Naturals, showcasing premium quality Himalayan Pink Rock Salt and natural products.
 
