@@ -1,3 +1,4 @@
+
 import { Component } from 'react';
 import { motion } from 'framer-motion';
 import { AlertTriangle } from 'lucide-react';
@@ -10,6 +11,10 @@ class ErrorBoundary extends Component {
 
   static getDerivedStateFromError(error) {
     return { hasError: true, error };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    console.error("Error caught by ErrorBoundary:", error, errorInfo);
   }
 
   render() {
@@ -31,7 +36,7 @@ class ErrorBoundary extends Component {
                 repeat: Infinity,
                 repeatType: "reverse"
               }}
-              className="inline-block text-red-500 mb-6"
+              className="inline-block text-red-600 mb-6"
             >
               <AlertTriangle size={64} />
             </motion.div>

@@ -1,6 +1,9 @@
 src/App.jsx
 import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import ErrorBoundary from './components/ErrorBoundary';
+import NotFound from './components/NotFound';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -10,7 +13,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Loader from './components/Loader';
 
-function App() {
+function MainContent() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -43,9 +46,82 @@ function App() {
   );
 }
 
+function App() {
+  return (
+    <ErrorBoundary>
+      <Router>
+        <Routes>
+          <Route path="/" element={<MainContent />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Router>
+    </ErrorBoundary>
+  );
+}
+
 export default App;
 --------------------------
+src/components/ErrorBoundary.jsx
+import { Component } from 'react';
+import { motion } from 'framer-motion';
+import { AlertTriangle } from 'lucide-react';
+
+class ErrorBoundary extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false, error: null };
+  }
+
+  static getDerivedStateFromError(error) {
+    return { hasError: true, error };
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div className="min-h-screen bg-dark-100 flex items-center justify-center p-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="max-w-md w-full bg-dark-200 p-8 rounded-2xl shadow-xl text-center"
+          >
+            <motion.div
+              animate={{ 
+                rotate: [0, 10, -10, 0],
+                scale: [1, 1.1, 1]
+              }}
+              transition={{ 
+                duration: 2,
+                repeat: Infinity,
+                repeatType: "reverse"
+              }}
+              className="inline-block text-red-500 mb-6"
+            >
+              <AlertTriangle size={64} />
+            </motion.div>
+            <h1 className="text-2xl font-bold text-white mb-4">Oops! Something went wrong</h1>
+            <p className="text-gray-400 mb-8">
+              We're experiencing some technical difficulties. Please try refreshing the page or come back later.
+            </p>
+            <button
+              onClick={() => window.location.reload()}
+              className="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full transition-all transform hover:scale-105"
+            >
+              Refresh Page
+            </button>
+          </motion.div>
+        </div>
+      );
+    }
+
+    return this.props.children;
+  }
+}
+
+export default ErrorBoundary;
+-------------------------
 src/components/Navbar.jsx
+
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-scroll';
@@ -221,7 +297,7 @@ export default Navbar;
 ---------------------
 src/components/Hero.jsx
 
-import { motion } from 'framer-motion';
+iimport { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
 import { ChevronDown, Crown } from 'lucide-react';
 
@@ -1244,21 +1320,47 @@ index.html
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- < add logo >  -->
+    <link rel="icon" type="image/png" href="/c_logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Vrinda Naturals - Premium quality natural products including Pink Rock Salt. Pure. Natural. Trusted." />
-    <meta name="keywords" content="Vrinda Naturals, Pink Rock Salt, Natural Products, Organic, Premium Quality" />
+    
+    <!-- Primary Meta Tags -->
+    <title>Vrinda Naturals - Premium Quality Natural Products | Pink Rock Salt</title>
+    <meta name="title" content="Vrinda Naturals - Premium Quality Natural Products | Pink Rock Salt" />
+    <meta name="description" content="Discover premium quality Himalayan Pink Rock Salt and natural products at Vrinda Naturals. Pure, organic, and trusted source for your healthy lifestyle needs." />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://vrindanaturals.netlify.app/" />
+    <meta property="og:title" content="Vrinda Naturals - Premium Quality Natural Products" />
+    <meta property="og:description" content="Premium quality Himalayan Pink Rock Salt and natural products. Pure. Natural. Trusted." />
+    <meta property="og:image" content="https://vrindanaturals.netlify.app/c_logo.png" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://vrindanaturals.netlify.app/" />
+    <meta property="twitter:title" content="Vrinda Naturals - Premium Quality Natural Products" />
+    <meta property="twitter:description" content="Premium quality Himalayan Pink Rock Salt and natural products. Pure. Natural. Trusted." />
+    <meta property="twitter:image" content="https://vrindanaturals.netlify.app/c_logo.png" />
+    
+    <!-- Keywords -->
+    <meta name="keywords" content="Vrinda Naturals, Pink Rock Salt, Himalayan Salt, Natural Products, Organic Products, Premium Salt, Health Products, Indian Natural Products" />
+    
+    <!-- Additional Meta Tags -->
     <meta name="author" content="Vrinda Naturals" />
     <meta name="robots" content="index, follow" />
-    <!-- live webiste:  https://vrindanaturals.netlify.app/ -->
-
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="theme-color" content="#000000" />
+    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <meta name="google-site-verification" content="whbS8i4c9DDvZwbgVUuAktotRJ9vr8I_mDPxnzUZ50I" />
     
-    <title>Vrinda Naturals - Pure. Natural. Trusted.</title>
-  
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://vrindanaturals.netlify.app/" />
   </head>
   <body>
     <div id="root"></div>
@@ -1266,3 +1368,114 @@ index.html
   </body>
 </html>
 ---------------------------
+app.css
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+---------------
+index.css
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --primary: #FF4790;
+  --dark-100: #000000;
+  --dark-200: #111111;
+  --dark-300: #222222;
+}
+
+@layer base {
+  body {
+    @apply bg-dark-100 text-white;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-title {
+    @apply text-4xl font-bold mb-6 text-white;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary/90 transition-colors duration-300;
+  }
+
+  .btn-secondary {
+    @apply bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 transition-colors duration-300;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-pink-400;
+  }
+
+  .nav-link {
+    @apply hover:text-primary transition-colors duration-300;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+=========================================
+- this is my complte compny website but i dont like this update this proepr and give me new all page code. With SEO Frndly + responicve frendly.
+- and also must change Product.jsx i dont like this desing. 
+
+- give me full new code in jsx formate not ts or tsx. all file give me .js or jsx fromate not else.

@@ -1,0 +1,78 @@
+  const products = [
+    {
+      id: 1,
+      name: 'Himalayan Pink Rock Salt - Packet',
+      description: 'High-quality Himalayan Pink Rock Salt packed in a sealed 1kg pouch. Rich in minerals and perfect for daily cooking. Our premium salt is sourced directly from the Himalayan mountains, ensuring the highest quality and purity.',
+      rating: 5,
+      benefits: [
+        {
+          icon: <img src='https://cdn-icons-png.flaticon.com/512/3449/3449449.png' className='w-8 h-8' alt="Cooking" />,
+          title: "COOKING",
+          description: "Perfect for all cooking needs"
+        },
+        {
+          icon: <img src='https://cdn-icons-png.flaticon.com/512/1834/1834842.png' className='w-8 h-8' alt="Respiratory" />,
+          title: "RESPIRATORY HEALTH",
+          description: "Improves breathing naturally"
+        },
+        {
+          icon: <img src='https://cdn-icons-png.flaticon.com/512/2966/2966327.png' className='w-8 h-8' alt="Heart" />,
+          title: "HEART & BONE",
+          description: "Supports cardiovascular health"
+        }
+      ],
+      weights: [
+        { size: '1kg - Pink Rock Salt', price: 75 }
+      ],
+      image: 'https://jivikaorganics.in/cdn/shop/files/HimalayanRocksalt1.jpg?v=1689672006&width=533'
+    },
+    {
+      id: 2,
+      name: 'Himalayan Pink Rock Salt - Bottle Pack',
+      description: 'Natural Himalayan Pink Salt available in convenient bottle packaging. Ideal for table use and storage. The bottle packaging ensures long-lasting freshness and easy dispensing. Perfect for both kitchen and dining table use.',
+      rating: 4.9,
+      benefits: [
+        {
+          icon: <img src='https://cdn-icons-png.flaticon.com/512/3449/3449449.png' className='w-8 h-8' alt="Cooking" />,
+          title: "COOKING",
+          description: "Perfect for all cooking needs"
+        },
+        {
+          icon: <img src='https://cdn-icons-png.flaticon.com/512/1834/1834842.png' className='w-8 h-8' alt="Respiratory" />,
+          title: "RESPIRATORY HEALTH",
+          description: "Improves breathing naturally"
+        },
+        {
+          icon: <img src='https://cdn-icons-png.flaticon.com/512/2966/2966327.png' className='w-8 h-8' alt="Heart" />,
+          title: "HEART & BONE",
+          description: "Supports cardiovascular health"
+        }
+      ],
+      weights: [
+        { size: '1kg - Pink Rock Salt Bottle', price: 99 }
+      ],
+      image: btlimg
+    }
+  ];
+
+  const comingSoonProducts = [
+    {
+      id: 3,
+      name: 'Family Pack Collection',
+      description: 'Our upcoming collection of family-sized packages, perfect for bulk buying and long-term storage. Available in various sizes to suit your needs.',
+      image: 'https://www.krmbs.com/Images/Product/Default/xlarge/0126950_1%20Rock%20Salt2.jpg',
+      variants: [
+        { name: '2kg - Pink Rock Salt Pouch', price: 149 },
+        { name: '5kg - Pink Rock Salt Pouch', price: 249 },
+      ]
+    },
+    {
+      id: 4,
+      name: 'Travel-Friendly Pack',
+      description: 'Compact 400gm pouches, perfect for travelers and small households. Experience the same premium quality in a convenient, portable size.',
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXjX-reJzSG1Z-VKjoEcRLmIhpeMdzcD93ym1dZxHgEloUUkoWLIVwdlNjSMDV-lDH8jk&usqp=CAU',
+      variants: [
+        { name: '400gm - Pink Rock Salt Pouch', price: 49 }
+      ]
+    }
+  ];

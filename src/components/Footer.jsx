@@ -1,64 +1,113 @@
 import { motion } from 'framer-motion';
-import { MessageCircle, Package, Bot as Bottle } from 'lucide-react';
+import { MessageCircle, Package, Heart } from 'lucide-react';
+import { Link } from 'react-scroll';
+import mountain from '../img/mountain.png';
+import { useState } from 'react';
 
 function Footer() {
   const currentYear = new Date().getFullYear();
+  const [email, setEmail] = useState('');
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
   const footerLinks = {
     products: [
-      { name: 'Natural Products', href: '#products', icon: <Package className="w-4 h-4" /> },
-      { name: 'Packaged Items', href: '#products', icon: <Bottle className="w-4 h-4" /> }
+      { name: 'Pink Salt Packets', href: '#products' },
+      { name: 'Bottled Salt', href: '#products' }
     ],
     company: [
       { name: 'About Us', href: '#about' },
+      { name: 'Certifications', href: '#certifications' },
       { name: 'Contact Us', href: '#contact' }
+    ],
+    social: [
+      { name: 'WhatsApp', href: 'https://wa.me/919913007777' }
     ]
   };
 
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6 }
+    }
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (email.endsWith('@gmail.com')) {
+      setIsSubmitted(true);
+      setError('');
+    } else {
+      setError('Please enter a valid Gmail address.');
+    }
+  };
+
   return (
-    <footer className="bg-gradient-to-t from-primary/10 to-transparent text-white pt-16 pb-8">
-      <div className="section-container flex flex-col items-center">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16 w-full max-w-4xl">
+    <footer className="bg-gradient-to-t from-dark-100 to-dark-200 text-white pt-20 pb-8 border-t border-primary/10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Company Info */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="space-y-6 text-center md:text-left"
+            className="space-y-6"
           >
-            <motion.h3
-              className="text-3xl font-bold gradient-text"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300 }}
+            <Link
+              to="home"
+              spy={true}
+              smooth={true}
+              offset={-80}
+              duration={500}
+              className="inline-flex items-center gap-2 cursor-pointer"
             >
-              Vrinda Naturals
-            </motion.h3>
+              <img src={mountain} alt="Vrinda Naturals Logo" className="h-10 w-auto" />
+              <motion.h3
+                className="text-2xl font-bold gradient-text"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                Vrinda Naturals
+              </motion.h3>
+            </Link>
             <p className="text-gray-400">
-              Bringing nature's goodness to your doorstep. Premium quality natural and organic products for a healthier lifestyle.
+              Bringing nature's goodness to your doorstep. Premium quality salt products sourced from the pristine Himalayan mountains.
             </p>
           </motion.div>
 
-          {/* Products */}
+          {/* Quick Links */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
             viewport={{ once: true }}
-            className="text-center md:text-left"
           >
-            <h4 className="text-lg font-semibold mb-6">Our Products</h4>
+            <h4 className="text-lg font-semibold mb-6">Products</h4>
             <ul className="space-y-4">
-              {footerLinks.products.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center justify-center md:justify-start gap-2"
+              {footerLinks.products.map((link, index) => (
+                <motion.li
+                  key={link.name}
+                  variants={itemVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  custom={index}
+                >
+                  <Link
+                    to="products"
+                    spy={true}
+                    smooth={true}
+                    offset={-80}
+                    duration={500}
+                    className="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center gap-2 cursor-pointer"
                   >
-                    {link.icon}
+                    <Package className="w-4 h-4" />
                     {link.name}
-                  </a>
-                </li>
+                  </Link>
+                </motion.li>
               ))}
             </ul>
           </motion.div>
@@ -69,21 +118,72 @@ function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-center md:text-left"
           >
             <h4 className="text-lg font-semibold mb-6">Company</h4>
             <ul className="space-y-4">
-              {footerLinks.company.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="text-gray-400 hover:text-primary transition-colors duration-300"
+              {footerLinks.company.map((link, index) => (
+                <motion.li
+                  key={link.name}
+                  variants={itemVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  custom={index}
+                >
+                  <Link
+                    to={link.href.replace('#', '')}
+                    spy={true}
+                    smooth={true}
+                    offset={-80}
+                    duration={500}
+                    className="text-gray-400 hover:text-primary transition-colors duration-300 cursor-pointer"
                   >
                     {link.name}
-                  </a>
-                </li>
+                  </Link>
+                </motion.li>
               ))}
             </ul>
+          </motion.div>
+
+          {/* Newsletter */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
+            <h4 className="text-lg font-semibold mb-6">Subscribe to Our Newsletter</h4>
+            <p className="text-gray-400 mb-4">Get the latest updates and offers directly to your inbox.</p>
+
+            {!isSubmitted ? (
+              <form className="space-y-3" onSubmit={handleSubmit}>
+                <div className="relative">
+                  <input
+                    type="email"
+                    placeholder="Your email address"
+                    className="w-full px-4 py-3 bg-dark-300 rounded-lg border border-primary/10 focus:outline-none focus:border-primary/50 text-white"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                  {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
+                </div>
+                <motion.button
+                  type="submit"
+                  className="w-full bg-primary text-white py-3 rounded-lg hover:bg-primary/90 transition-colors duration-300"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  Subscribe
+                </motion.button>
+              </form>
+            ) : (
+              <p className="text-green-500">Thank you for subscribing!</p>
+            )}
+
+            <p className="text-xs text-gray-500 mt-3">
+              By subscribing, you agree to our Privacy Policy and consent to receive updates from our company.
+            </p>
           </motion.div>
         </div>
 
@@ -104,7 +204,7 @@ function Footer() {
 
         {/* Divider */}
         <motion.div
-          className="w-full h-px bg-gradient-to-r from-transparent via-primary to-transparent mb-8"
+          className="w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent mb-8"
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           transition={{ duration: 1 }}
@@ -112,8 +212,13 @@ function Footer() {
         />
 
         {/* Copyright */}
-        <div className="text-center text-gray-400 text-sm">
+        <div className="flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
           <p>&copy; {currentYear} Vrinda Naturals. All rights reserved.</p>
+          <div className="flex items-center mt-4 md:mt-0">
+            <span className="flex items-center">
+              Made with <Heart className="w-4 h-4 mx-1 text-primary" /> in India
+            </span>
+          </div>
         </div>
       </div>
     </footer>

@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Phone, Mail, MapPin, Clock, Building2 } from 'lucide-react';
@@ -45,19 +46,20 @@ function Contact() {
   ];
 
   return (
-    <section id="contact" ref={ref} className="py-20 bg-black">
-      <div className="section-container">
+    <section id="contact" ref={ref} className="py-24 bg-gradient-to-b from-dark-100 to-dark-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Let's <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Connect</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Let's <span className="bg-gradient-to-r from-primary to-pink-400 bg-clip-text text-transparent">Connect</span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-            Ready to experience nature's finest? Reach out to us through any of these channels.
+          <p className="text-gray-300 max-w-2xl mx-auto text-lg">
+            Ready to experience nature's finest? Reach out to us through any of these channels
+            and our team will be happy to assist you.
           </p>
         </motion.div>
 
@@ -68,30 +70,37 @@ function Contact() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative group"
-              style={{ perspective: '1000px' }}
+              className="relative group h-full"
             >
               <motion.div
-                whileHover={{ rotateY: 10, rotateX: 10 }}
+                whileHover={{ 
+                  rotateY: 10, 
+                  rotateX: 10,
+                  translateZ: 10
+                }}
                 transition={{ type: "spring", stiffness: 300 }}
+                style={{ perspective: '1000px', height: '100%' }}
               >
-                <div className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl blur-lg"
-                  style={{ background: `linear-gradient(135deg, ${card.color})` }}
+                <div 
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl blur-lg -z-10"
+                  style={{ background: `linear-gradient(135deg, ${card.color.split(' ')[1]}, ${card.color.split(' ')[3]})` }}
                 ></div>
+                
                 <a 
                   href={card.link}
                   target={card.link?.startsWith('http') ? "_blank" : undefined}
                   rel={card.link?.startsWith('http') ? "noopener noreferrer" : undefined}
-                  className="block"
+                  className={`block h-full ${card.link ? 'cursor-pointer' : 'cursor-default'}`}
+                  aria-label={card.link ? `Contact us via ${card.title}` : undefined}
                 >
-                  <div className="relative p-8 rounded-2xl border border-primary/60 group-hover:border-primary/30 transition-all duration-300 h-full backdrop-blur-sm">
+                  <div className="relative p-8 rounded-2xl border border-primary/10 group-hover:border-primary/30 transition-all duration-300 h-full bg-dark-100 backdrop-blur-sm">
                     <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${card.color} p-4 mb-6 text-white flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300`}>
                       {card.icon}
                     </div>
                     <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-primary transition-colors duration-300">
                       {card.title}
                     </h3>
-                    <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
+                    <p className="text-gray-300 group-hover:text-white transition-colors duration-300">
                       {card.content}
                     </p>
                   </div>
@@ -100,6 +109,24 @@ function Contact() {
             </motion.div>
           ))}
         </div>
+        
+        {/* Map Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="mt-16 rounded-2xl overflow-hidden border border-primary/10"
+        >
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29761.881736406934!2d72.81116162662274!3d21.203259097824876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04dec1efccd97%3A0x7bdaacaea87ecefb!2sSayan%2C%20Surat%2C%20Gujarat%20394130!5e0!3m2!1sen!2sin!4v1653205174188!5m2!1sen!2sin" 
+            className="w-full h-[400px]"
+            style={{ border: 0 }} 
+            allowFullScreen="" 
+            loading="lazy"
+            title="Vrinda Naturals Location Map"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </motion.div>
       </div>
     </section>
   );

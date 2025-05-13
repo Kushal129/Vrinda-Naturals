@@ -87,7 +87,7 @@ function Navbar() {
                 {activeSection === item && (
                   <motion.div
                     layoutId="activeSection"
-                    className="absolute inset-0 bg-primary/10 rounded-lg -z-10"
+                    className="absolute inset-0 bg-primary/10 rounded-t-xl -z-10"
                     transition={{ duration: 0.3 }}
                   />
                 )}

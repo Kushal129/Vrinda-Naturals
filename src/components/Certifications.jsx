@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Award, CheckCircle, FileText, Shield, Star, Leaf } from 'lucide-react';
@@ -29,13 +30,6 @@ function Certifications() {
       description: 'Good Manufacturing Practice',
       icon: <CheckCircle className="w-8 h-8" />,
       number: 'GMP-2023-456'
-    },
-    {
-      id: 4,
-      name: 'HACCP Certified',
-      description: 'Hazard Analysis Critical Control Point',
-      icon: <Shield className="w-8 h-8" />,
-      number: 'HACCP-2023-789'
     },
     {
       id: 5,
@@ -93,11 +87,11 @@ function Certifications() {
             Our Standards
           </motion.span>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-            Quality <span className="text-primary">Certifications</span>
+            Quality <span className="text-primary text-glow">Certifications</span>
           </h2>
-          <p className="text-gray-400 text-lg leading-relaxed">
+          <p className="text-gray-300 text-lg leading-relaxed">
             Our commitment to excellence is backed by internationally recognized certifications
-            and quality standards.
+            and quality standards that ensure every product meets the highest levels of safety and purity.
           </p>
         </motion.div>
 
@@ -115,8 +109,8 @@ function Certifications() {
               }}
               className="relative group"
             >
-              <div className="absolute inset-0 bg-primary/5 rounded-2xl transform -skew-y-2 group-hover:skew-y-0 transition-transform duration-300" />
-              <div className="relative bg-dark-100 p-8 rounded-2xl border border-primary/10 group-hover:border-primary/20 transition-colors duration-300">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-2xl transform -rotate-1 group-hover:rotate-0 transition-transform duration-300" />
+              <div className="relative bg-dark-100 p-8 rounded-2xl border border-primary/10 group-hover:border-primary/20 transition-colors duration-300 h-full">
                 <div className="flex items-center gap-6 mb-6">
                   <div className="relative">
                     <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -144,6 +138,18 @@ function Certifications() {
               </div>
             </motion.div>
           ))}
+        </motion.div>
+        
+        <motion.div 
+          variants={itemVariants}
+          className="mt-16 text-center"
+        >
+          <div className="inline-block p-4 bg-primary/10 rounded-xl border border-primary/20">
+            <p className="text-gray-300">
+              These certifications reflect our dedication to providing products that are safe,
+              pure, and produced with the highest standards of quality and ethics.
+            </p>
+          </div>
         </motion.div>
       </motion.div>
     </section>
