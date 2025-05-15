@@ -70,4 +70,4 @@ Visit [Vrinda Naturals](https://vrindanaturals.netlify.app/) to see the live web
 
 ## License
 
-Copyright © 2024 Vrinda Naturals. All rights reserved.
+Copyright © 2025 Vrinda Naturals. All rights reserved.
