@@ -34,7 +34,7 @@ function Contact() {
     {
       icon: <Clock className="w-8 h-8" />,
       title: "Business Hours",
-      content: "Mon - Sat: 9:00 AM - 6:00 PM",
+      content: "Mon - Sat: 9:00 AM - 7:00 PM",
       color: "from-green-500 to-emerald-400"
     },
     {
