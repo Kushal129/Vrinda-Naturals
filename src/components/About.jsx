@@ -175,7 +175,7 @@ function About() {
                       className="relative w-full h-full flex items-center justify-center"
                     >
                       <img
-                        src="/c_logo.png"
+                        src="/logo.png"
                         alt="Vrinda Naturals Logo"
                         className="max-w-full max-h-full object-contain drop-shadow-[0_0_15px_rgba(104,64,85,0.3)]"
                       />

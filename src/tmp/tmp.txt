@@ -1320,7 +1320,7 @@ index.html
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/c_logo.png" />
+    <link rel="icon" type="image/png" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <!-- Primary Meta Tags -->
@@ -1333,14 +1333,14 @@ index.html
     <meta property="og:url" content="https://vrindanaturals.netlify.app/" />
     <meta property="og:title" content="Vrinda Naturals - Premium Quality Natural Products" />
     <meta property="og:description" content="Premium quality Himalayan Pink Rock Salt and natural products. Pure. Natural. Trusted." />
-    <meta property="og:image" content="https://vrindanaturals.netlify.app/c_logo.png" />
+    <meta property="og:image" content="https://vrindanaturals.netlify.app/logo.png" />
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://vrindanaturals.netlify.app/" />
     <meta property="twitter:title" content="Vrinda Naturals - Premium Quality Natural Products" />
     <meta property="twitter:description" content="Premium quality Himalayan Pink Rock Salt and natural products. Pure. Natural. Trusted." />
-    <meta property="twitter:image" content="https://vrindanaturals.netlify.app/c_logo.png" />
+    <meta property="twitter:image" content="https://vrindanaturals.netlify.app/logo.png" />
     
     <!-- Keywords -->
     <meta name="keywords" content="Vrinda Naturals, Pink Rock Salt, Himalayan Salt, Natural Products, Organic Products, Premium Salt, Health Products, Indian Natural Products" />
