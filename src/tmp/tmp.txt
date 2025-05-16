@@ -1322,45 +1322,89 @@ index.html
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- Primary Meta Tags -->
-    <title>Vrinda Naturals - Premium Quality Natural Products | Pink Rock Salt</title>
-    <meta name="title" content="Vrinda Naturals - Premium Quality Natural Products | Pink Rock Salt" />
-    <meta name="description" content="Discover premium quality Himalayan Pink Rock Salt and natural products at Vrinda Naturals. Pure, organic, and trusted source for your healthy lifestyle needs." />
-    
-    <!-- Open Graph / Facebook -->
+
+    <title>Vrinda Naturals | Himalayan Pink Rock Salt & Organic Products</title>
+    <meta name="title" content="Vrinda Naturals | Himalayan Pink Rock Salt & Organic Products" />
+    <meta name="description" content="Buy authentic Himalayan Pink Rock Salt from Vrinda Naturals - 100% pure, organic. Enhance flavor, improve health & elevate cooking naturally. Shop now!" />
+
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://vrindanaturals.netlify.app/" />
-    <meta property="og:title" content="Vrinda Naturals - Premium Quality Natural Products" />
-    <meta property="og:description" content="Premium quality Himalayan Pink Rock Salt and natural products. Pure. Natural. Trusted." />
+    <meta property="og:title" content="Vrinda Naturals | Himalayan Pink Rock Salt & Organic Products" />
+    <meta property="og:description" content="Discover authentic Himalayan Pink Rock Salt and premium natural products. 100% pure, organic & ethically sourced for your healthy lifestyle. Shop now!" />
     <meta property="og:image" content="https://vrindanaturals.netlify.app/logo.png" />
-    
-    <!-- Twitter -->
+    <meta property="og:site_name" content="Vrinda Naturals" />
+    <meta property="og:locale" content="en_US" />
+
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://vrindanaturals.netlify.app/" />
-    <meta property="twitter:title" content="Vrinda Naturals - Premium Quality Natural Products" />
-    <meta property="twitter:description" content="Premium quality Himalayan Pink Rock Salt and natural products. Pure. Natural. Trusted." />
-    <meta property="twitter:image" content="https://vrindanaturals.netlify.app/logo.png" />
-    
-    <!-- Keywords -->
-    <meta name="keywords" content="Vrinda Naturals, Pink Rock Salt, Himalayan Salt, Natural Products, Organic Products, Premium Salt, Health Products, Indian Natural Products" />
-    
-    <!-- Additional Meta Tags -->
+    <meta property="twitter:title" content="Vrinda Naturals | Premium Himalayan Pink Rock Salt" />
+    <meta property="twitter:description" content="Authentic Himalayan Pink Rock Salt and natural products. Pure. Organic. Trusted. Enhance health naturally." />
+    <meta property="twitter:image" content="https://vrindanaturals.netlify.app/logo.png" /> 
+
+    <meta name="keywords" content="Vrinda Naturals, Himalayan Pink Rock Salt, Organic Salt, Natural Health Products, Buy Pink Salt, Premium Salt, Himalayan Salt Benefits, Natural Products India, Organic Health Products, Pure Rock Salt" />
+
     <meta name="author" content="Vrinda Naturals" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="language" content="English" />
-    <meta name="revisit-after" content="7 days" />
-    <meta name="theme-color" content="#000000" />
-    
-    <!-- Fonts -->
+    <meta name="revisit-after" content="3 days" />
+    <meta name="theme-color" content="#FF4790" />
+    <meta name="msapplication-TileColor" content="#FF4790" />
+    <meta name="rating" content="General" />
+    <meta name="geo.region" content="IN" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
     <meta name="google-site-verification" content="whbS8i4c9DDvZwbgVUuAktotRJ9vr8I_mDPxnzUZ50I" />
-    
-    <!-- Canonical URL -->
+
     <link rel="canonical" href="https://vrindanaturals.netlify.app/" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Vrinda Naturals",
+      "url": "https://vrindanaturals.netlify.app/",
+      "logo": "https://vrindanaturals.netlify.app/logo.png",
+      "description": "Premium supplier of Himalayan Pink Rock Salt and natural organic products.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91 9913007777",
+        "contactType": "Customer Service",
+        "areaServed": "IN",
+        "availableLanguage": "en_US"
+      },
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Himalayan Pink Rock Salt",
+      "image": "https://vrindanaturals.netlify.app/assets/Packimg-CegN36iw.jpg", 
+      "description": "100% pure and authentic Himalayan Pink Rock Salt, ethically sourced and packed for premium quality.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Vrinda Naturals"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "INR",
+        "price": "99.00", // Price updated
+        "availability": "https://schema.org/InStock",
+        "url": "https://vrindanaturals.netlify.app/" // URL where this product can be purchased (can be the homepage or a specific product page)
+        // "priceValidUntil": "2027-5-10" // Optional: If the price is valid for a certain period
+      }
+      // If you have product reviews, uncomment and fill this section:
+      // "aggregateRating": {
+      //   "@type": "AggregateRating",
+      //   "ratingValue": "4.8", // Example: average rating
+      //   "reviewCount": "125"  // Example: number of reviews
+      // }
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
@@ -1475,7 +1519,66 @@ index.css
 }
 
 =========================================
-- this is my complte compny website but i dont like this update this proepr and give me new all page code. With SEO Frndly + responicve frendly.
-- and also must change Product.jsx i dont like this desing. 
+- when i chack Vrindanaturals.netlify.app - SEO Checker then its show this 
+Task list of SEO Improvements8 Tasks
 
-- give me full new code in jsx formate not ts or tsx. all file give me .js or jsx fromate not else.
+Add a H1 heading to this page.
+Very important!
+
+Use good headings on the page.
+Very important!
+
+This page has only very few internal links. If it's a welcome page, consider removing it.
+Very important!
+
+Use 301 redirects to drive traffic to URLS with the same domain and sub domain (www and non-www subdomain).
+Very important!
+
+Fix errors regarding the language markup of your web page.
+Very important!
+
+Review and improve the page title.
+Important!
+
+Improve the text of the meta description.
+Important!
+
+The page title should be better suited to the content of the page.
+Important!
+
+==========
+Language
+Language defined in HTML: en
+Language defined in meta tags: english
+Server location: India
+ There are different language information within the page markup.
+ One or more of the specified languages are not ISO standard (en, en-us, de, etc.)
+ The following language is defined by HTML: english
+ ------
+ Content
+ There are only 0 words on this page. Use at least 250 words to provide useful information.
+ Some words from the page title are not used within the pages content
+ No paragraphs were detected.
+ No placeholders texts or images were found.
+ -------
+ Page structure58% achieved
+H1 heading
+ There is no H1 heading specified.
+ H1-H6 headings
+Headings
+ There are no headings specified on the page. Headings are important for search engine optimization and help to structure your content.
+---------
+Link structure0% achieved
+Internal links
+ This page seems to be an entry page, because only very few links were found.
+-----------
+Server configuration0% achieved
+HTTP redirects
+The checked page does not redirect to another URL.
+ This website uses URLs with www and non-www subdomain. This may cause duplicate content and bad links to your website. Redirect Checker
+---------------
+Robots.txt
+No valid Robots.txt file was found.
+----------------
+
+- all fix and give me proper updateed code and files. in jsx or js formate.

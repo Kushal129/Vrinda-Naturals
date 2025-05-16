@@ -1,0 +1,6 @@
+# robots.txt for vrindanaturals.netlify.app
+
+User-agent: *
+Allow: /
+
+Sitemap: https://vrindanaturals.netlify.app/sitemap.xml

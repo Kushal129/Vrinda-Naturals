@@ -22,7 +22,7 @@ function Navbar() {
   const navItems = ['home', 'about', 'products', 'certifications', 'contact'];
 
   const mobileMenuVariants = {
-    hidden: { 
+    hidden: {
       opacity: 0,
       height: 0,
       transition: {
@@ -30,7 +30,7 @@ function Navbar() {
         staggerDirection: -1
       }
     },
-    visible: { 
+    visible: {
       opacity: 1,
       height: 'auto',
       transition: {
@@ -51,9 +51,9 @@ function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'bg-dark-100/95 backdrop-blur-md shadow-lg shadow-primary/5 ' 
-          : 'bg-transparent border-none'
+        scrolled
+          ? 'bg-dark-100/95 backdrop-blur-md shadow-lg shadow-primary/5'
+          : 'bg-transparent border-none transition-all duration-300'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -134,7 +134,7 @@ function Navbar() {
             initial="hidden"
             animate="visible"
             exit="hidden"
-            className="md:hidden bg-dark-200/95 backdrop-blur-md border-t border-primary/10"
+            className="md:hidden bg-dark-100/85 backdrop-blur-md border-t border-primary/10 transition-all duration-300"
           >
             <div className="px-4 py-2 space-y-1">
               {navItems.map((item) => (

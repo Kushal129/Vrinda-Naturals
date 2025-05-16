@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Phone, Mail, MapPin, Clock, Building2 } from 'lucide-react';
@@ -14,34 +13,34 @@ function Contact() {
       icon: <Phone className="w-8 h-8" />,
       title: "Phone",
       content: "+91 9913007777",
-      color: "from-blue-500 to-cyan-400",
+      color: "from-primary to-black",
       link: "tel:+919913007777"
     },
     {
       icon: <Mail className="w-8 h-8" />,
       title: "Email",
       content: "vrindagruhudyog79@gmail.com",
-      color: "from-purple-500 to-pink-400",
+      color: "from-primary to-black",
       link: "mailto:vrindagruhudyog79@gmail.com"
     },
     {
       icon: <MapPin className="w-8 h-8" />,
       title: "Location",
       content: "Sayan Road, Surat – 394130",
-      color: "from-orange-500 to-red-400",
+      color: "from-primary to-black",
       link: "https://maps.google.com/?q=Sayan+Road,+Surat,+394130"
     },
     {
       icon: <Clock className="w-8 h-8" />,
       title: "Business Hours",
       content: "Mon - Sat: 9:00 AM - 7:00 PM",
-      color: "from-green-500 to-emerald-400"
+      color: "from-primary to-black"
     },
     {
       icon: <Building2 className="w-8 h-8" />,
       title: "Company",
       content: "Vrinda Naturals Pvt. Ltd.",
-      color: "from-yellow-500 to-amber-400"
+      color: "from-primary to-black"
     }
   ];
 
@@ -73,27 +72,28 @@ function Contact() {
               className="relative group h-full"
             >
               <motion.div
-                whileHover={{ 
-                  rotateY: 10, 
-                  rotateX: 10,
-                  translateZ: 10
+                whileHover={{
+                  y: -10,
+                  boxShadow: "0 10px 20px rgba(0, 0, 0, 0.2)"
                 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                style={{ perspective: '1000px', height: '100%' }}
+                transition={{ type: "spring", stiffness: 200 }}
+                className="h-full"
               >
-                <div 
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl blur-lg -z-10"
-                  style={{ background: `linear-gradient(135deg, ${card.color.split(' ')[1]}, ${card.color.split(' ')[3]})` }}
-                ></div>
-                
-                <a 
+                <a
                   href={card.link}
                   target={card.link?.startsWith('http') ? "_blank" : undefined}
                   rel={card.link?.startsWith('http') ? "noopener noreferrer" : undefined}
                   className={`block h-full ${card.link ? 'cursor-pointer' : 'cursor-default'}`}
                   aria-label={card.link ? `Contact us via ${card.title}` : undefined}
                 >
-                  <div className="relative p-8 rounded-2xl border border-primary/10 group-hover:border-primary/30 transition-all duration-300 h-full bg-dark-100 backdrop-blur-sm">
+                  <div className={`relative p-8 rounded-2xl border border-primary/10 group-hover:border-l-primary/30 transition-all duration-300 h-full bg-dark-100 backdrop-blur-sm overflow-hidden`}>
+                    {/* Glow effect */}
+                    <div className="absolute inset-0 pointer-events-none">
+                      <div className="absolute -inset-x-10 -inset-y-10 opacity-30 group-hover:opacity-70 transition-opacity duration-300">
+                        <div className="absolute inset-0 bg-gradient-to-br from-primary to-transparent opacity-50"></div>
+                      </div>
+                    </div>
+
                     <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${card.color} p-4 mb-6 text-white flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300`}>
                       {card.icon}
                     </div>
@@ -109,7 +109,7 @@ function Contact() {
             </motion.div>
           ))}
         </div>
-        
+
         {/* Map Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -117,11 +117,11 @@ function Contact() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mt-16 rounded-2xl overflow-hidden border border-primary/10"
         >
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29761.881736406934!2d72.81116162662274!3d21.203259097824876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04dec1efccd97%3A0x7bdaacaea87ecefb!2sSayan%2C%20Surat%2C%20Gujarat%20394130!5e0!3m2!1sen!2sin!4v1653205174188!5m2!1sen!2sin" 
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29761.881736406934!2d72.81116162662274!3d21.203259097824876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04dec1efccd97%3A0x7bdaacaea87ecefb!2sSayan%2C%20Surat%2C%20Gujarat%20394130!5e0!3m2!1sen!2sin!4v1653205174188!5m2!1sen!2sin"
             className="w-full h-[400px]"
-            style={{ border: 0 }} 
-            allowFullScreen="" 
+            style={{ border: 0 }}
+            allowFullScreen=""
             loading="lazy"
             title="Vrinda Naturals Location Map"
             referrerPolicy="no-referrer-when-downgrade"

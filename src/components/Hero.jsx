@@ -54,7 +54,7 @@ function Hero() {
         ))}
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 text-center ">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 text-center">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -85,20 +85,21 @@ function Hero() {
             </span>
           </motion.div>
 
+          {/* H1 heading for SEO */}
           <motion.h1 
             variants={textVariants}
             className="text-6xl md:text-8xl font-bold mb-6"
           >
             Experience Pure
-            <span className="block text-primary mt-2">Natural Essence</span>
+            <span className="block text-primary mt-2">Himalayan Pink Salt</span>
           </motion.h1>
 
           <motion.p
             variants={textVariants}
             className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-12"
           >
-            Discover our premium collection of Himalayan Pink Salt, 
-            carefully sourced from the heart of nature.
+            Discover our premium collection of Himalayan Pink Rock Salt, 
+            carefully sourced from the heart of nature for authentic flavor and natural health benefits.
           </motion.p>
 
           <motion.div
