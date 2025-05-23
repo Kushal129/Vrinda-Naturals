@@ -23,7 +23,7 @@ function Footer() {
       { name: 'Refund Policy', href: '/refund-policy' }
     ],
     contact: [
-      { name: '+91 9912007777', href: 'tel:+919912007777', icon: <Phone className="w-4 h-4" /> },
+      { name: '+91 9913007777', href: 'tel:+9913007777', icon: <Phone className="w-4 h-4" /> },
       { name: 'vrindagruhudyog79@gmail.com', href: 'mailto:vrindagruhudyog79@gmail.com', icon: <Mail className="w-4 h-4" /> },
       { name: 'Sayan Road, Surat – 394130', href: 'https://maps.google.com/?q=Sayan+Road,+Surat,+394130', icon: <MapPin className="w-4 h-4" /> }
     ],
@@ -150,7 +150,7 @@ function Footer() {
         {/* WhatsApp Button */}
         <div className="flex justify-center mb-12">
           <motion.a
-            href="https://wa.me/919912007777?text=I'm%20interested%20in%20your%20Himalayan%20Pink%20Rock%20Salt%20products"
+            href="https://wa.me/919913007777?text=I'm%20interested%20in%20your%20Himalayan%20Pink%20Rock%20Salt%20products"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center space-x-3 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-8 py-4 rounded-full transition-all shadow-lg hover:shadow-xl"
