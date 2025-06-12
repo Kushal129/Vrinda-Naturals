@@ -1,20 +1,22 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ShoppingCart, Star, Scale, Utensils, Heart } from 'lucide-react';
+import { ShoppingCart, Star, Scale } from 'lucide-react';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
+import packet from '../img/Packing1.jpg';
+import bottle from '../img/Bottle1.jpg';
 
 function Products() {
   const [selectedQuantities, setSelectedQuantities] = useState({});
   const [errors, setErrors] = useState({});
 
   const [ref1, inView1] = useInView({
-    threshold: 0.1, // Lower threshold for mobile
+    threshold: 0.1, 
     triggerOnce: true
   });
 
   const [ref2, inView2] = useInView({
-    threshold: 0.1, // Lower threshold for mobile
+    threshold: 0.1, 
     triggerOnce: true
   });
 
@@ -43,9 +45,10 @@ function Products() {
         }
       ],
       weights: [
-        { size: '1kg', price: 150 }
+        { size: '1kg', price: 75 }
       ],
-      image: 'https://res.cloudinary.com/day0qlfda/image/upload/v1747389121/nmlchldqlgm0ha2uhtjn.jpg',
+      // image: 'https://res.cloudinary.com/day0qlfda/image/upload/v1747389121/nmlchldqlgm0ha2uhtjn.jpg',
+      image: packet,
       url: 'https://vrindanaturals.netlify.app/#product-pink-salt-packet'
     },
     {
@@ -72,10 +75,11 @@ function Products() {
         }
       ],
       weights: [
-        { size: '1kg', price: 200 },
-        { size: '500gm', price: 120 }
+        { size: '1kg', price: 99 }
+        // { size: '500gm', price: 120 }
       ],
-      image: 'https://res.cloudinary.com/day0qlfda/image/upload/v1747389113/bpszqyfkjyp2hy6e8t0j.webp',
+      // image: 'https://res.cloudinary.com/day0qlfda/image/upload/v1747389113/bpszqyfkjyp2hy6e8t0j.webp',
+      image: bottle,
       url: 'https://vrindanaturals.netlify.app/#product-pink-salt-bottle'
     },
   ];
@@ -158,7 +162,7 @@ function Products() {
   };
 
   return (
-    <section id="products" className="py-20 bg-dark-100">
+    <section id="products" className="py-20 bg-dark-100 cursor-default">
       <motion.div
         variants={containerVariants}
         initial="hidden"

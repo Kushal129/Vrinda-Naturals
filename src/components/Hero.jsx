@@ -28,23 +28,23 @@ function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden py-[8rem] bg-dark-100">
-      {/* Animated background elements */}
+    <section id="home" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden py-20 bg-gradient-to-r from-dark-200 to-dark-100">
+      {/* Enhanced Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(20)].map((_, i) => (
+        {[...Array(30)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-primary rounded-full"
+            className="absolute w-2 h-2 bg-primary rounded-full"
             animate={{
               x: [Math.random() * window.innerWidth, Math.random() * window.innerWidth],
               y: [Math.random() * window.innerHeight, Math.random() * window.innerHeight],
-              opacity: [0.2, 0.5, 0.2],
-              scale: [1, 2, 1]
+              opacity: [0.1, 0.4, 0.1],
+              scale: [0.5, 1.5, 0.5]
             }}
             transition={{
-              duration: Math.random() * 8 + 4,
+              duration: Math.random() * 10 + 5,
               repeat: Infinity,
-              ease: "linear"
+              ease: "easeInOut"
             }}
             style={{
               left: `${Math.random() * 100}%`,
@@ -54,33 +54,33 @@ function Hero() {
         ))}
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 text-center">
+      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center cursor-default">
         <motion.div
           initial="hidden"
           animate="visible"
           variants={{
             visible: {
               transition: {
-                staggerChildren: 0.2
+                staggerChildren: 0.3
               }
             }
           }}
         >
-          <motion.div className="relative inline-block mb-4" variants={buttonVariants}>
+          <motion.div className="relative inline-block mb-6" variants={buttonVariants}>
             <motion.div
-              className="absolute -right-0 -top-8"
+              className="absolute -right-4 -top-10"
               animate={{
-                rotate: [0, 10, -10, 0],
+                rotate: [0, 15, -15, 0],
                 transition: {
-                  duration: 2,
+                  duration: 3,
                   repeat: Infinity,
-                  ease: "linear"
+                  ease: "easeInOut"
                 }
               }}
             >
-              <Crown className="w-8 h-8 text-primary" />
+              <Crown className="w-10 h-10 text-primary" />
             </motion.div>
-            <span className="bg-primary/10 text-primary px-6 py-2 rounded-full text-sm font-medium">
+            <span className="bg-primary/20 text-primary px-8 py-3 rounded-full text-md font-semibold cursor-default">
               Premium Quality
             </span>
           </motion.div>
@@ -88,15 +88,15 @@ function Hero() {
           {/* H1 heading for SEO */}
           <motion.h1 
             variants={textVariants}
-            className="text-6xl md:text-8xl font-bold mb-6"
+            className="text-5xl md:text-7xl font-extrabold mb-8"
           >
             Experience Pure
-            <span className="block text-primary mt-2">Himalayan Pink Salt</span>
+            <span className="block text-primary mt-3">Himalayan Pink Salt</span>
           </motion.h1>
 
           <motion.p
             variants={textVariants}
-            className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-12"
+            className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10"
           >
             Discover our premium collection of Himalayan Pink Rock Salt, 
             carefully sourced from the heart of nature for authentic flavor and natural health benefits.
@@ -104,7 +104,7 @@ function Hero() {
 
           <motion.div
             variants={buttonVariants}
-            className="flex flex-col sm:flex-row gap-6 justify-center"
+            className="flex flex-col sm:flex-row gap-8 justify-center"
           >
             <Link
               to="products"
@@ -112,7 +112,7 @@ function Hero() {
               smooth={true}
               duration={800}
               offset={-80}
-              className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full text-lg font-medium transition-all transform hover:scale-105 cursor-pointer"
+              className="bg-primary hover:bg-primary/80 text-white px-10 py-5 rounded-full text-lg font-medium transition-all transform hover:scale-110 cursor-pointer"
             >
               View Products
             </Link>
@@ -120,7 +120,7 @@ function Hero() {
               href="https://wa.me/919913007777"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-dark-200 hover:bg-dark-300 text-white px-8 py-4 rounded-full text-lg font-medium transition-all transform hover:scale-105"
+              className="bg-dark-300 hover:bg-dark-400 text-white px-10 py-5 rounded-full text-lg font-medium transition-all transform hover:scale-110"
             >
               Contact Us
             </a>
@@ -131,7 +131,7 @@ function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 1 }}
-          className="absolute -bottom-[5rem] left-1/2 transform -translate-x-1/2"
+          className="absolute -bottom-20 left-1/2 transform -translate-x-1/2"
         >
           <Link
             to="about"
@@ -141,7 +141,7 @@ function Hero() {
             offset={-80}
             className="cursor-pointer"
           >
-            <ChevronDown className="w-10 h-10 text-primary animate-bounce" />
+            <ChevronDown className="w-12 h-12 text-primary animate-bounce" />
           </Link>
         </motion.div>
       </div>

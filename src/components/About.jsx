@@ -49,7 +49,7 @@ function About() {
   };
 
   return (
-    <section id="about" ref={ref} className="py-24 bg-dark-200">
+    <section id="about" ref={ref} className="py-24 bg-gradient-to-br from-dark-200 via-dark-100 to-dark-200 overflow-hidden cursor-default">
       <motion.div
         variants={containerVariants}
         initial="hidden"
