@@ -3,6 +3,8 @@ import { Link } from 'react-scroll';
 import { ChevronDown, Sparkles, Leaf, Globe, Award, ShoppingBag, ArrowRight, Package, Star, Heart } from 'lucide-react';
 import SplitText from "../ui/SplitText";
 import FadeContent from '../ui/FadeContent';
+import ShinyText from '../ui/ShinyText';
+
 
 function Hero() {
   const containerVariants = {
@@ -63,33 +65,14 @@ function Hero() {
       title: "Wholesale",
       subtitle: "Bulk Orders",
       description: "Contact for wholesale"
-    }
+    } 
   ];
 
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-dark-900 via-dark-800 to-dark-700 overflow-hidden py-16 sm:py-20 lg:py-24"
+      className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden py-16 sm:py-20 lg:py-24"
     >
-      {/* Enhanced Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-1/2 -right-1/2 w-full h-full bg-gradient-to-bl from-primary/10 via-transparent to-transparent rotate-12 transform" />
-        <div className="absolute -bottom-1/2 -left-1/2 w-full h-full bg-gradient-to-tr from-primary/5 via-transparent to-transparent -rotate-12 transform" />
-        <div className="absolute top-0 left-0 w-full h-full bg-[url('/grid-pattern.svg')] opacity-5" />
-        
-        {/* Floating decorative elements */}
-        <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute top-20 right-20 w-2 h-2 bg-primary/30 rounded-full hidden lg:block"
-        />
-        <motion.div
-          animate={{ rotate: -360 }}
-          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-          className="absolute bottom-32 left-16 w-3 h-3 bg-primary/20 rounded-full hidden lg:block"
-        />
-      </div>
-
       <div className="relative z-10 w-full max-w-7xl mx-auto">
         <motion.div
           initial="hidden"
@@ -113,31 +96,30 @@ function Hero() {
           </motion.div>
 
           {/* Main Heading - Mobile Optimized */}
-          <motion.div variants={itemVariants} className="space-y-3 sm:space-y-4 lg:space-y-6">
+          <motion.div variants={itemVariants} className="space-y-3 sm:space-y-4 lg:space-y-6 cursor-pointer">
             <div className="space-y-2 sm:space-y-3 lg:space-y-4">
               <SplitText
                 text="Experience Pure"
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight px-2"
                 splitType="words, chars"
                 delay={50}
+                hover={true}
               />
               <SplitText
                 text="Himalayan Salt!"
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary leading-tight px-2"
                 splitType="words, chars"
                 delay={100}
+                hover={true}
               />
             </div>
-
             <FadeContent
               duration={800}
               delay={300}
               className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-2xl mx-auto px-4"
             >
-              <p className="leading-relaxed">
-                Discover the perfect balance of minerals and purity in every grain. 
-                Our premium Himalayan salt brings ancient wisdom to your modern lifestyle.
-              </p>
+              <ShinyText text="Discover the perfect balance of minerals and purity in every grain.
+                Our premium Himalayan salt brings ancient wisdom to your modern lifestyle." disabled={false} speed={3} className='custom-class' />
             </FadeContent>
           </motion.div>
 
@@ -205,21 +187,6 @@ function Hero() {
                 ))}
               </div>
             </FadeContent>
-          </motion.div>
-
-          {/* Scroll Indicator */}
-          <motion.div
-            variants={itemVariants}
-            className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2"
-          >
-            <motion.div
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="flex flex-col items-center text-white/60 hover:text-white/80 transition-colors cursor-pointer"
-            >
-              <span className="text-xs sm:text-sm mb-2 hidden sm:block">Scroll Down</span>
-              <ChevronDown className="w-5 h-5 sm:w-6 sm:h-6" />
-            </motion.div>
           </motion.div>
         </motion.div>
       </div>

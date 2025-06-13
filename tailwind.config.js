@@ -82,6 +82,10 @@ module.exports = {
         'shimmer': {
           '0%': { backgroundPosition: '-200% 0' },
           '100%': { backgroundPosition: '200% 0' }
+        },
+        'shine': {
+          '0%': { 'background-position': '100%' },
+          '100%': { 'background-position': '-100%' },
         }
       },
       animation: {
@@ -89,7 +93,8 @@ module.exports = {
         'accordion-up': 'accordion-up 0.2s ease-out',
         'float': 'float 6s ease-in-out infinite',
         'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
-        'shimmer': 'shimmer 2s infinite linear'
+        'shimmer': 'shimmer 2s infinite linear',
+        'shine': 'shine 5s linear infinite'
       },
       backgroundImage: {
         'hero-pattern': 'linear-gradient(to right bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)), url("/src/assets/img/himalayan-background.jpg")',
